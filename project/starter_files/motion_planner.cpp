@@ -82,17 +82,17 @@ std::vector<State> MotionPlanner::generate_offset_goals(
   // main goal. To get a perpendicular angle, just add 90 (or PI/2) to the main
   // goal heading.
 
-  // TODO-Perpendicular direction: ADD pi/2 to the goal yaw
+  // Perpendicular direction: ADD pi/2 to the goal yaw
   // (goal_state.rotation.yaw)
-  //auto yaw = ;  // <- Fix This
+  auto yaw_plus_90 = goal_state.rotation.yaw + M_PI / 2;
 
-  // LOG(INFO) << "MAIN GOAL";
-  // LOG(INFO) << "x: " << goal_state.location.x << " y: " <<
-  // goal_state.location.y
-  //          << " z: " << goal_state.location.z
-  //          << " yaw (rad): " << goal_state.rotation.yaw;
-  // LOG(INFO) << "OFFSET GOALS";
-  // LOG(INFO) << "ALL offset yaw (rad): " << yaw;
+//                                                    LOG(INFO)
+//                      << "MAIN GOAL";
+//   LOG(INFO) << "x: " << goal_state.location.x << " y: " << goal_state.location.y
+//             << " z: " << goal_state.location.z
+//             << " yaw (rad): " << goal_state.rotation.yaw;
+//   LOG(INFO) << "OFFSET GOALS";
+//   LOG(INFO) << "ALL offset yaw (rad): " << yaw;
 
   for (int i = 0; i < _num_paths; ++i) {
     auto goal_offset = goal_state;
@@ -104,13 +104,13 @@ std::vector<State> MotionPlanner::generate_offset_goals(
 
     // LOG(INFO) << "offset: " << offset;
 
-    // TODO-offset goal location: calculate the x and y position of the offset
+    // offset goal location: calculate the x and y position of the offset
     // goals using "offset" (calculated above) and knowing that the goals should
     // lie on a perpendicular line to the direction (yaw) of the main goal. You
     // calculated this direction above (yaw_plus_90). HINT: use
     // std::cos(yaw_plus_90) and std::sin(yaw_plus_90)
-    // goal_offset.location.x += ;  // <- Fix This
-    // goal_offset.location.y += ;  // <- Fix This
+    goal_offset.location.x += offset * std::cos(yaw_plus_90);
+    goal_offset.location.y += offset * std::sin(yaw_plus_90);
     // LOG(INFO) << "x: " << goal_offset.location.x
     //          << " y: " << goal_offset.location.y
     //          << " z: " << goal_offset.location.z

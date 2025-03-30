@@ -112,8 +112,8 @@ std::vector<TrajectoryPoint> VelocityProfileGenerator::decelerate_trajectory(
   }
 
   /* If the brake distance exceeds the length of the path, then we cannot
-  perform a smooth deceleration and require a harder deceleration.  Build the path
-  up in reverse to ensure we reach zero speed at the required time.
+  perform a smooth deceleration and require a harder deceleration.  Build the
+  path up in reverse to ensure we reach zero speed at the required time.
   */
   if (brake_distance + decel_distance > path_length) {
     std::vector<double> speeds;
@@ -357,12 +357,12 @@ double VelocityProfileGenerator::calc_distance(const double& v_i,
   if (std::abs(a) < DBL_EPSILON) {
     d = std::numeric_limits<double>::infinity();
   } else {
-    // TODO-calc distance: use one of the common rectilinear accelerated
+    // calc distance: use one of the common rectilinear accelerated
     // equations of motion to calculate the distance traveled while going from
     // v_i (initial velocity) to v_f (final velocity) at a constant
     // acceleration/deceleration "a". HINT look at the description of this
     // function. Make sure you handle div by 0
-    d = 0;  // <- Update
+    d = std::abs((v_f * v_f - v_i * v_i) / (2 * a));
   }
   return d;
 }
@@ -380,18 +380,18 @@ double VelocityProfileGenerator::calc_final_speed(const double& v_i,
                                                   const double& a,
                                                   const double& d) const {
   double v_f{0.0};
-  // TODO-calc final speed: Calculate the final distance. HINT: look at the
+  // calc final speed: Calculate the final distance. HINT: look at the
   // description of this function. Make sure you handle negative discriminant
   // and make v_f = 0 in that case. If the discriminant is inf or nan return
   // infinity
 
-  double disc = 0;  // <- Fix this
-  if (disc <= 0.0) {
-    v_f = 0.0;
-  } else if (disc == std::numeric_limits<double>::infinity() ||
-             std::isnan(disc)) {
+  double disc = 2.0 * a * d + std::pow(v_i, 2);
+  if (disc <= 0.0) { v_f = 0.0; }
+  else if (disc == std::numeric_limits<double>::infinity() ||
+           std::isnan(disc)) {
     v_f = std::numeric_limits<double>::infinity();
-  } else {
+  }
+  else {
     v_f = std::sqrt(disc);
   }
   //   std::cout << "v_i, a, d: " << v_i << ", " << a << ", " << d
