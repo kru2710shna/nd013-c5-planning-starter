@@ -236,6 +236,20 @@ kill id
 <br/><br/>
 
 ## Step 8. Check the Rubric and Submit
-
 Re-check the rubric in the classroom and ensure that your submission satisfies all rubric criteria to pass the project. Once you are confident, submit the project. 
+
+
+## Results 
+<img width="1346" alt="output-11" src="https://github.com/user-attachments/assets/d611e6f7-2348-46e4-8dfb-bb2372152044" />
+<img width="1343" alt="output-10" src="https://github.com/user-attachments/assets/8872b774-5a5a-4c8b-8a0c-3d297fb9028d" />
+<img width="1379" alt="output-12" src="https://github.com/user-attachments/assets/4cb88123-dc86-4112-9eec-310a5459c1a1" />
+<img width="1337" alt="output-2" src="https://github.com/user-attachments/assets/02fe1da5-89c1-43a5-bced-6f785a9fab48" />
+<img width="1346" alt="output-3" src="https://github.com/user-attachments/assets/7f3bcf4e-fba9-43ba-8125-0090d1c6cc45" />
+<img width="1345" alt="output-9" src="https://github.com/user-attachments/assets/de39ae93-ebd5-4f4a-9dd1-333b519abe29" />
+<img width="1344" alt="output-8" src="https://github.com/user-attachments/assets/cd2955ef-5b79-4b9c-9d12-68c81efcff5a" />
+<img width="1343" alt="output-7" src="https://github.com/user-attachments/assets/cae527c3-b64f-48e0-9897-2ad319ce8c63" />
+<img width="1337" alt="output-5" src="https://github.com/user-attachments/assets/e974945d-4ae1-441a-aef2-5e968735e574" />
+<img width="1342" alt="output-6" src="https://github.com/user-attachments/assets/b4195c8f-9b5e-41eb-9b3a-9ae93c4ddc07" />
+<img width="1337" alt="output-4" src="https://github.com/user-attachments/assets/c9912724-704f-4215-b4b5-e02ea0fcfd40" />
+<img width="1421" alt="output-1" src="https://github.com/user-attachments/assets/48cf52dc-195a-4778-b819-2303b11335b1" />
 
